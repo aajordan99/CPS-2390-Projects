@@ -1,0 +1,15 @@
+;R1 has value of x3100
+;R2 has value of x3101
+;R3 has nor value of x3100 and x3101
+
+0011000000000000;start at x3000
+0101001001100000;clears r1
+0101010010100000;clears r2
+0101011011100000;clears r3
+0010001011111100;loads x3100 into r1
+0010010011111100;loads x3101 into r2
+1001001001111111;not r1
+1001010010111111;not r2
+0101011001000010;and r1 and r2
+0011011011111001;(since or is not r1 anded with not r2 and then negated again, i assumed nor was just without the last not) Stores r3 into x3102
+1111000000100101;Trap x25

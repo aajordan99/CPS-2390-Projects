@@ -1,0 +1,13 @@
+;R1 is original data register
+;R2 is counter register
+0011000000000000; start at x3000
+0101001001100000; clear R1
+0101010010100000; clears R2
+0010001011111101; loads value of x3100 into R1 as # to be shifted
+0010010011111101; loads value of x3101 into R2 as counter
+0001001001000001; adds R1 to itself which moves the binary number to the left and stores in R3
+0001010010111111; decrements the counter by 1
+0000001111111101; branch statement while counter != 0
+0011001011111010; stores R1 value into x3102
+1111000000100101; halt
+

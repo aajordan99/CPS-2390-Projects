@@ -1,0 +1,25 @@
+;R1 has initial value of x3100
+;R2 has initial value of x3101
+;R3 is a temp register
+;R4 is a temp register
+;R5 is a temp register
+;R6 has the XOR value of R1 and R2
+0011000000000000; Start at x3000
+0101001001100000;clear r1
+0101010010100000;clear r2
+0101011011100000;clear r3
+0101100100100000;clear r4
+0101101101100000;clear r5
+0101110110100000;clear r6
+0010001011111001;load x3100 into r1
+0010010011111001;load x3101 into r2
+0101011001000010;and r1 and r2 and store in r3
+1001011011111111;negates r3
+0101100001000011;ands r3 and r1 and stores in r4
+0101101010000011;ands r2 and r3 and stores in r5
+1001101101111111;negates r5
+1001100100111111;negates r4
+0101110101000100;ands r4 and r5 and stores in r6
+1001110110111111;negates r6 (xor value)
+0011110011110001;stores r6 in x3102
+1111000000100101; Trap x025

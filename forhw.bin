@@ -1,0 +1,7 @@
+.orig x3000
+
+ADD R2,R2 x332C
+
+
+HALT
+.END
